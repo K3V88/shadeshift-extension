@@ -1,0 +1,47 @@
+{
+  "name": "shadeshift-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Intelligent, reversible automatic dark mode. No tracking or backend.",
+  "license": "MIT",
+  "author": "K3V88",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:browser": "npm run build && playwright test",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build",
+    "icons": "node scripts/icons.mjs",
+    "demo": "node scripts/demo.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.56.0",
+    "@types/chrome": "^0.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.73.0",
+    "vite": "^8.3.8",
+    "vitest": "^4.1.12"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/K3V88/shadeshift-extension.git"
+  }
+}

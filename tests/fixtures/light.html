@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Light fixture</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #fff;
+        color: #111;
+        font: 18px/1.6 system-ui;
+      }
+      main {
+        padding: 40px;
+        max-width: 1100px;
+      }
+      .card {
+        background: #f7f7f7;
+        color: #202020;
+        border: 1px solid #ccc;
+        border-radius: 14px;
+        padding: 20px;
+        margin: 15px 0;
+      }
+      a {
+        color: #074cc4;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        background: #fff;
+        color: #111;
+        border: 1px solid #999;
+        padding: 10px;
+      }
+      button:hover {
+        background: #dfe9ff;
+        color: #112244;
+      }
+      button:disabled {
+        opacity: 0.5;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      .gradient {
+        background: linear-gradient(90deg, #fff, #e8e0ff);
+        height: 80px;
+        padding: 15px;
+      }
+      img,
+      svg,
+      video,
+      canvas {
+        width: 70px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>A comfortable place to read</h1>
+      <p id="text">
+        ShadeShift analyzes the page, preserves media, and restores the original
+        appearance when disabled.
+      </p>
+      <a href="#details">A meaningful blue link</a>
+      <section class="card" id="card">
+        <h2>Nested surface</h2>
+        <p>Content should remain readable without changing the layout.</p>
+        <label>Name <input id="field" placeholder="Your name" /></label
+        ><button id="button">Continue</button
+        ><button disabled>Unavailable</button
+        ><select aria-label="Choice">
+          <option>First choice</option></select
+        ><textarea aria-label="Message">An editable message</textarea>
+      </section>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Contrast</td>
+          <td>Readable</td>
+        </tr>
+      </table>
+      <div class="gradient">A gentle gradient</div>
+      <div id="media">
+        <img
+          id="image"
+          alt="Color sample"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='50'%3E%3Crect width='70' height='50' fill='%23ff8800'/%3E%3C/svg%3E"
+        /><svg id="illustration" viewBox="0 0 70 50">
+          <rect width="70" height="50" fill="#0088cc" /></svg
+        ><video id="video" controls></video
+        ><canvas id="canvas" width="70" height="50"></canvas>
+      </div>
+      <div id="dynamic"></div>
+      <div id="shadow-host"></div>
+      <p>End of fixture.</p>
+    </main>
+    <script>
+      const c = document.querySelector("canvas").getContext("2d");
+      c.fillStyle = "#ff00aa";
+      c.fillRect(0, 0, 70, 50);
+      const shadow = document
+        .querySelector("#shadow-host")
+        .attachShadow({ mode: "open" });
+      const box = document.createElement("div");
+      box.id = "shadow-card";
+      box.style.cssText = "background:white;color:black;padding:20px";
+      box.textContent = "Open shadow root content";
+      shadow.append(box);
+    </script>
+  </body>
+</html>
